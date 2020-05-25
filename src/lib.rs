@@ -133,7 +133,6 @@ impl Universe {
                     live_neighbors
                 );
 
-
                 let next_cell = match (cell, live_neighbors) {
                     // Rule 1: Any live cell with fewer than two live neighbours
                     // dies, as if caused by underpopulation.
