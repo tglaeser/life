@@ -1,5 +1,6 @@
 import { Universe, Cell } from "life";
 import { memory } from "life/life_bg";
+import { fps } from "./timer.js";
 
 const CELL_SIZE = 5; // px
 const GRID_COLOR = "#CCCCCC";
@@ -44,6 +45,8 @@ let animationId = null;
 // result of `requestAnimationFrame` is assigned to
 // `animationId`.
 const renderLoop = () => {
+  fps.render();
+
   drawGrid();
   drawCells();
 
