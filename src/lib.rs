@@ -35,7 +35,6 @@ pub struct Universe {
     cells: Vec<Cell>,
 }
 
-
 impl Universe {
     fn get_index(&self, row: u32, column: u32) -> usize {
         (row * self.width + column) as usize
@@ -71,7 +70,6 @@ impl Universe {
             self.cells[idx] = Cell::Alive;
         }
     }
-
 }
 
 impl fmt::Display for Universe {
@@ -91,6 +89,33 @@ impl fmt::Display for Universe {
 /// Public methods, exported to JavaScript.
 #[wasm_bindgen]
 impl Universe {
+    pub fn new() -> Universe {
+        utils::set_panic_hook();
+        let width = 64;
+        let height = 64;
+
+        let cells = (0..width * height)
+            .map(|_i| {
+                if _i % 2 == 0 || _i % 7 == 0 {
+                    // if js_sys::Math::random() < 0.5 {
+                    Cell::Alive
+                } else {
+                    Cell::Dead
+                }
+            })
+            .collect();
+
+        Universe {
+            width,
+            height,
+            cells,
+        }
+    }
+
+    pub fn render(&self) -> String {
+        self.to_string()
+    }
+
     pub fn tick(&mut self) {
         let mut next = self.cells.clone();
 
@@ -166,32 +191,5 @@ impl Universe {
     pub fn toggle_cell(&mut self, row: u32, column: u32) {
         let idx = self.get_index(row, column);
         self.cells[idx].toggle();
-    }
-
-    pub fn new() -> Universe {
-	utils::set_panic_hook();
-        let width = 64;
-        let height = 64;
-
-        let cells = (0..width * height)
-            .map(|_i| {
-		if _i % 2 == 0 || _i % 7 == 0 {
-//		if js_sys::Math::random() < 0.5 {
-                    Cell::Alive
-		} else {
-                    Cell::Dead
-		}
-            })
-            .collect();
-
-        Universe {
-            width,
-            height,
-            cells,
-        }
-    }
-
-    pub fn render(&self) -> String {
-        self.to_string()
     }
 }

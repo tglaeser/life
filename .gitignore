@@ -1,3 +1,4 @@
+# Rust & WASM
 /target
 **/*.rs.bk
 Cargo.lock
@@ -6,3 +7,7 @@ pkg/
 wasm-pack.log
 www/node_modules
 www/dist
+
+# IntelliJ IDEA
+.idea/
+*.iml
