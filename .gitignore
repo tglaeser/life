@@ -1,11 +1,11 @@
-# Rust & WASM
+# Rust & wasm-pack
 Cargo.lock
 pkg/
 target/
 
 # Node
-www/node_modules
-www/dist
+package-lock.json
+node_modules
 
 # IntelliJ IDEA
 .idea/
