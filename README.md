@@ -7,6 +7,8 @@
 Based on the tutorial from the Rust 🦀 and WebAssembly 🕸 [book][rustwasm-book]; it demonstrates how to compile Rust sources
 into WebAssembly to be served via [Node.js][nodejs].
 
+[![Build Status](https://travis-ci.org/tglaeser/life.svg?branch=master)](https://travis-ci.org/tglaeser/life)
+
 ## 📚 Table of Contents
 1. [Core sub-project](./core/README.md)
 1. [Web sub-project](./web/README.md)
