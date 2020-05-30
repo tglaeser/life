@@ -6,8 +6,8 @@ addons:
   firefox: latest
   chrome: stable
 before_script:
- - cd core
- - (test -x $HOME/.cargo/bin/cargo-install-update || cargo install cargo-update)
+  - cd core
+  - (test -x $HOME/.cargo/bin/cargo-install-update || cargo install cargo-update)
   - cargo install-update -a
   - curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh -s -- -f
 script:
