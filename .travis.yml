@@ -1,8 +1,12 @@
 sudo: false # run on container-based infrastructure
-
-matrix:
+stages:
+  - core
+  - web
+jobs:
   include:
-    - language: rust
+    - stage: core
+      name: "Core sub-project"
+      language: rust
       cache: cargo
       env: RUST_BACKTRACE=1
       addons:
@@ -16,8 +20,9 @@ matrix:
       script:
         - wasm-pack build
         - wasm-pack test --chrome --firefox --headless
-
-    - language: node_js
+    - stage: web
+      name: "Web sub-project"
+      language: node_js
       node_js:
         - 12
       before_script:
