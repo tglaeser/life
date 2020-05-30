@@ -15,10 +15,8 @@ before_install:
 install:
   - wasm-pack build
   - wasm-pack test --chrome --firefox --headless
-after_install:
-  - cd ..
 before_script:
-  - cd web
+  - cd ../web
   - npm install
 script:
   - npm test
