@@ -1,5 +1,5 @@
-import { Universe, Cell } from "life-core";
-import { memory } from "life-core/life_core_bg";
+import { Universe, Cell } from "life_core";
+import { memory } from "life_core/life_core_bg";
 import { fps } from "./timer.js";
 
 const CELL_SIZE = 5; // px
