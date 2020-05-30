@@ -16,7 +16,10 @@ matrix:
         - cd core
         - wasm-pack build
         - wasm-pack test --chrome --firefox --headless
+
     - language: node_js
+      node_js:
+        - 12
       script:
         - cd web
         - npm test
