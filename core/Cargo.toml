@@ -3,6 +3,8 @@ name = "life"
 version = "0.1.0"
 description = "Implementation of Conway's Game of Life in Rust and WebAssembly"
 authors = ["Thomas Glaeser <tglaeser@users.noreply.github.com>"]
+repository = "https://github.com/tglaeser/life.git"
+license = "Apache-2.0"
 edition = "2018"
 
 [lib]

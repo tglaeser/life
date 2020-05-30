@@ -1,7 +1,7 @@
 ## _Life_ Core Crate
-[wasm-bindgen]:(https://github.com/rustwasm/wasm-bindgen)
-[console_error_panic_hook]:(https://github.com/rustwasm/console_error_panic_hook)
-[wee_alloc]:(https://github.com/rustwasm/wee_alloc)
+[wasm-bindgen]:https://github.com/rustwasm/wasm-bindgen
+[console_error_panic_hook]:https://github.com/rustwasm/console_error_panic_hook
+[wee_alloc]:https://github.com/rustwasm/wee_alloc
 #### Build Core Crate
 ```
 $ wasm-pack build
