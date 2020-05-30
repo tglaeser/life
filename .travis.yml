@@ -1,25 +1,24 @@
 sudo: false # run on container-based infrastructure
-- language: rust
-  cache: cargo
-  env: RUST_BACKTRACE=1
-  addons:
-    firefox: latest
-    chrome: stable
-  before_script:
-    - cd core
-    - (test -x $HOME/.cargo/bin/cargo-install-update || cargo install cargo-update)
-    - cargo install-update -a
-    - curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh -s -- -f
-  script:
-    - wasm-pack build
-    - wasm-pack test --chrome --firefox --headless
-  after_script:
-    - cd ..
-- language: node_js
-  node_js:
-    - 12
-  before_script:
-    - cd web
-    - npm install
-  script:
+language: rust
+cache: cargo
+env: RUST_BACKTRACE=1
+addons:
+  firefox: latest
+  chrome: stable
+before_script:
+ - cd core
+ - (test -x $HOME/.cargo/bin/cargo-install-update || cargo install cargo-update)
+  - cargo install-update -a
+  - curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh -s -- -f
+script:
+  - wasm-pack build
+  - wasm-pack test --chrome --firefox --headless
+after_script:
+  - cd ..
+node_js:
+  - 12
+before_install:
+  - cd web
+  - npm install
+install:
   - npm test
