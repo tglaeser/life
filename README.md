@@ -26,6 +26,7 @@ $ cd ./life
 ```
 $ tree -L 3 .
 .
+├── Cargo.toml
 ├── core
 │   ├── Cargo.toml
 │   ├── README.md

@@ -5,8 +5,8 @@
 extern crate wasm_bindgen_test;
 use wasm_bindgen_test::*;
 
-extern crate life;
-use life::Universe;
+extern crate life_core;
+use life_core::Universe;
 
 wasm_bindgen_test_configure!(run_in_browser);
 

@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/tglaeser/life#readme",
   "dependencies": {
-    "life": "file:../core/pkg"
+    "life-core": "file:../core/pkg"
   },
   "devDependencies": {
     "webpack": "^4.29.3",

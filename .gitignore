@@ -6,6 +6,7 @@ target/
 # Node
 package-lock.json
 node_modules
+dist
 
 # IntelliJ IDEA
 .idea/
