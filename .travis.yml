@@ -5,20 +5,20 @@ env: RUST_BACKTRACE=1
 addons:
   firefox: latest
   chrome: stable
-before_script:
-  - (test -x $HOME/.cargo/bin/cargo-install-update || cargo install cargo-update)
-  - cargo install-update -a
-  - curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh -s -- -f
-script:
-  - cd core
-  - wasm-pack build
-  - wasm-pack test --chrome --firefox --headless
-after_script:
-  - cd ..
 node_js:
   - 12
 before_install:
+  - (test -x $HOME/.cargo/bin/cargo-install-update || cargo install cargo-update)
+  - cargo install-update -a
+  - curl https://rustwasm.github.io/wasm-pack/installer/init.sh -sSf | sh -s -- -f
+  - cd core
+install:
+  - wasm-pack build
+  - wasm-pack test --chrome --firefox --headless
+after_install:
+  - cd ..
+before_script:
   - cd web
   - npm install
-install:
+script:
   - npm test
