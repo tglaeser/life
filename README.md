@@ -1,4 +1,4 @@
-## _Conway's Game of Life_ in Rust and WebAssembly
+## _Conway's Game of Life_ written in Rust and compiled into WebAssembly
 [rust-book]:https://doc.rust-lang.org/stable/book/
 [rustwasm-book]:https://rustwasm.github.io/docs/book/
 [rustup]:https://github.com/rust-lang/rustup/
